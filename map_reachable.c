@@ -1,4 +1,16 @@
-#include "../libft/libft.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   map_reachable.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: syanak <syanak@student.42kocaeli.com.tr >  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/14 12:07:29 by syanak            #+#    #+#             */
+/*   Updated: 2025/04/14 13:32:30 by syanak           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "./libs/libft/libft.h"
 #include "so_long.h"
 
 void	ft_flood_fill(char **map, int x, int y, t_game *game)

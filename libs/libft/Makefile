@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: syanak <syanak@student.42kocaeli.com.tr    +#+  +:+       +#+         #
+#    By: syanak <syanak@student.42kocaeli.com.tr >  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/03 22:12:09 by syanak            #+#    #+#              #
-#    Updated: 2024/11/06 17:49:57 by syanak           ###   ########.fr        #
+#    Updated: 2025/04/14 13:52:44 by syanak           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,7 +49,8 @@ SRC = ft_atoi.c		\
 	ft_toupper.c	\
 	ft_strlcat.c	\
 	ft_striteri.c	\
-	ft_strmapi.c
+	ft_strmapi.c	\
+	get_next_line.c
 
 BSOURCES = \
 	ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \

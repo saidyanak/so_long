@@ -1,8 +1,21 @@
-#include "so_long.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   accessibility_controls.c                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: syanak <syanak@student.42kocaeli.com.tr >  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/14 12:07:14 by syanak            #+#    #+#             */
+/*   Updated: 2025/04/14 12:53:26 by syanak           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void    xpm_control_one()
+#include "so_long.h"
+#include <unistd.h>
+
+void	xpm_control_one(void)
 {
-    int	fd_back;
+	int	fd_back;
 	int	fd_bg;
 	int	fd_block;
 	int	fd_coin;
@@ -26,7 +39,7 @@ void    xpm_control_one()
 	close(fd_coin);
 }
 
-void    xpm_control_two()
+void	xpm_control_two(void)
 {
 	int	fd_endgate;
 	int	fd_front;
@@ -57,8 +70,8 @@ void	path_checker(char *path)
 	int	len;
 
 	len = ft_strlen(path);
-	if (path[len - 1] != 'r' || path[len - 2] != 'e'
-		|| path[len - 3] != 'b' || path[len - 4] != '.')
+	if (path[len - 1] != 'r' || path[len - 2] != 'e' || path[len - 3] != 'b'
+		|| path[len - 4] != '.')
 	{
 		write(1, "Wrong File Extension", 21);
 		exit(1);
@@ -79,18 +92,18 @@ void	file_control(char *path)
 	close(fd);
 }
 
-void    accessibility_control(int ac, char **av)
+void	accessibility_control(int ac, char **av)
 {
-    if (ac == 2)
-    {
-        xpm_control_one();
-        xpm_control_two();
-        path_checker(av[1]);
-        file_control(av[1]);
-    }
-    else
-    {
-        write(2, "Accessibility Error", 19);
-        exit(1);
-    }
+	if (ac == 2)
+	{
+		xpm_control_one();
+		xpm_control_two();
+		path_checker(av[1]);
+		file_control(av[1]);
+	}
+	else
+	{
+		write(2, "Accessibility Error", 19);
+		exit(1);
+	}
 }
