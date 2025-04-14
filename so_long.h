@@ -26,15 +26,21 @@ typedef struct s_game
 	int		n_exit;
 	int		x_player;
 	int		y_player;
+	int     temp_c;
+    int     temp_e;
 	int		moves;
 	int		endgame;
 }	t_game;
 
 void    accessibility_control(int ac, char **av);
-void    init_map(char ** av, t_game game);
+void    init_map(char ** av, t_game *game);
 int	map_checker(t_game *game);
 char	**read_map(char *path);
+int	put_mlx(t_game *game);
 void	free_map(char **map);
+void	map_reachable(t_game *game);
+void    render_map(t_game *game);
+int	keyboard(int keycode, t_game *game);
 
 
 #endif
