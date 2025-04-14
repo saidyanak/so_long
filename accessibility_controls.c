@@ -15,54 +15,42 @@
 
 void	xpm_control_one(void)
 {
-	int	fd_back;
-	int	fd_bg;
-	int	fd_block;
-	int	fd_coin;
+	int	ft_background;
+	int	ft_collectibe;
+	int	fd_exit;
+	int	fd_player;
 
-	fd_back = open("./img/back_char.xpm", O_RDWR);
-	fd_bg = open("./img/bg.xpm", O_RDWR);
-	fd_block = open("./img/block.xpm", O_RDWR);
-	fd_coin = open("./img/coin.xpm", O_RDWR);
-	if (fd_back <= 0 || fd_bg <= 0 || fd_block <= 0 || fd_coin <= 0)
+	ft_background = open("./images/background.xpm", O_RDWR);
+	ft_collectibe = open("./images/collectibe.xpm", O_RDWR);
+	fd_exit = open("./images/exit.xpm", O_RDWR);
+	fd_player = open("./images/player.xpm", O_RDWR);
+	if (ft_background <= 0 || ft_collectibe <= 0 || fd_exit <= 0 || fd_player <= 0)
 	{
 		write(1, "Missing XPM File\n", 18);
-		close(fd_back);
-		close(fd_bg);
-		close(fd_block);
-		close(fd_coin);
+		close(ft_background);
+		close(ft_collectibe);
+		close(fd_exit);
+		close(fd_player);
 		exit(1);
 	}
-	close(fd_back);
-	close(fd_bg);
-	close(fd_block);
-	close(fd_coin);
+	close(ft_background);
+	close(ft_collectibe);
+	close(fd_exit);
+	close(fd_player);
 }
 
 void	xpm_control_two(void)
 {
-	int	fd_endgate;
-	int	fd_front;
-	int	fd_left;
-	int	fd_right;
+	int	ft_wall;
 
-	fd_endgate = open("./img/endgate.xpm", O_RDWR);
-	fd_front = open("./img/front_char.xpm", O_RDWR);
-	fd_left = open("./img/left_char.xpm", O_RDWR);
-	fd_right = open("./img/right_char.xpm", O_RDWR);
-	if (fd_endgate <= 0 || fd_front <= 0 || fd_left <= 0 || fd_right <= 0)
+	ft_wall = open("./images/wall.xpm", O_RDWR);
+	if (ft_wall <= 0)
 	{
 		write(1, "Missing XPM File\n", 18);
-		close(fd_endgate);
-		close(fd_front);
-		close(fd_left);
-		close(fd_right);
+		close(ft_wall);
 		exit(1);
 	}
-	close(fd_endgate);
-	close(fd_front);
-	close(fd_left);
-	close(fd_right);
+	close(ft_wall);
 }
 
 void	path_checker(char *path)

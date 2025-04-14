@@ -99,15 +99,15 @@ void	render_map(t_game *game)
 	game->win = mlx_new_window(game->mlx, game->map_w * PIXEL, game->map_h
 			* PIXEL, "so_long");
 	game->img_player = mlx_xpm_file_to_image(game->mlx,
-			"textures/forest-game-player.xpm", &y, &x);
+			"./images/player.xpm", &y, &x);
 	game->img_collect = mlx_xpm_file_to_image(game->mlx,
-			"textures/forest-game-collectable.xpm", &y, &x);
+			"./images/collectibe.xpm", &y, &x);
 	game->img_exit = mlx_xpm_file_to_image(game->mlx,
-			"textures/forest-game-img_exit.xpm", &y, &x);
+			"./images/exit.xpm", &y, &x);
 	game->img_wall = mlx_xpm_file_to_image(game->mlx,
-			"textures/forest-game-img_wall.xpm", &y, &x);
+			"./images/wall.xpm", &y, &x);
 	game->img_backg = mlx_xpm_file_to_image(game->mlx,
-			"textures/forest-game-floor.xpm", &y, &x);
+			"./images/background.xpm", &y, &x);
 	if (!game->win || !game->img_player || !game->img_collect || !game->img_exit
 		|| !game->img_wall || !game->img_backg)
 		mlx_exit("Error\nTextures not loaded!", game);
