@@ -6,7 +6,7 @@
 /*   By: syanak <syanak@student.42kocaeli.com.tr >  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 12:07:14 by syanak            #+#    #+#             */
-/*   Updated: 2025/04/14 12:53:26 by syanak           ###   ########.fr       */
+/*   Updated: 2025/04/15 15:24:51 by syanak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ void	xpm_control_one(void)
 	ft_collectibe = open("./images/collectibe.xpm", O_RDWR);
 	fd_exit = open("./images/exit.xpm", O_RDWR);
 	fd_player = open("./images/player.xpm", O_RDWR);
-	if (ft_background <= 0 || ft_collectibe <= 0 || fd_exit <= 0 || fd_player <= 0)
+	if (ft_background <= 0 || ft_collectibe <= 0 || fd_exit <= 0
+		|| fd_player <= 0)
 	{
 		write(1, "Missing XPM File\n", 18);
 		close(ft_background);

@@ -6,7 +6,7 @@
 /*   By: syanak <syanak@student.42kocaeli.com.tr >  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 12:07:39 by syanak            #+#    #+#             */
-/*   Updated: 2025/04/14 13:41:55 by syanak           ###   ########.fr       */
+/*   Updated: 2025/04/15 13:44:51 by syanak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <fcntl.h>
 # include <stdlib.h>
 
-# define PIXEL 48
+# define PIXEL 64
 
 # define W 119
 # define A 97
@@ -66,6 +66,6 @@ int			keyboard(int keycode, t_game *game);
 void		ft_error(char *av, t_game *game);
 void		ft_free_map(char **map);
 int			mlx_exit(char *str, t_game *game);
-char	*get_next_line(int fd);
+char		*get_next_line(int fd);
 
 #endif

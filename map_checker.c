@@ -6,12 +6,13 @@
 /*   By: syanak <syanak@student.42kocaeli.com.tr >  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 12:07:27 by syanak            #+#    #+#             */
-/*   Updated: 2025/04/14 12:07:27 by syanak           ###   ########.fr       */
+/*   Updated: 2025/04/15 15:37:50 by syanak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 #include <stdio.h>
+
 static int	is_retangular(char **map)
 {
 	int	i;
@@ -79,7 +80,7 @@ static int	is_pec(t_game *game)
 		}
 		i++;
 	}
-	if (game->n_player != 1 || game->n_exit == 0 || game->n_collect == 0)
+	if (game->n_player != 1 || game->n_exit != 1 || game->n_collect == 0)
 		return (0);
 	return (1);
 }
@@ -104,6 +105,7 @@ static int	is_validate(char **map)
 	}
 	return (1);
 }
+
 int	map_checker(t_game *game)
 {
 	if (is_retangular(game->map) && is_wall(game->map) && is_pec(game)

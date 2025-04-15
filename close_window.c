@@ -6,7 +6,7 @@
 /*   By: syanak <syanak@student.42kocaeli.com.tr >  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 12:35:30 by syanak            #+#    #+#             */
-/*   Updated: 2025/04/14 13:36:46 by syanak           ###   ########.fr       */
+/*   Updated: 2025/04/15 15:25:35 by syanak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	ft_free_map(char **map)
 		free(map[i]);
 	free(map);
 }
+
 void	ft_error(char *av, t_game *game)
 {
 	if (game)
@@ -31,6 +32,7 @@ void	ft_error(char *av, t_game *game)
 	write(1, av, ft_strlen(av));
 	exit(1);
 }
+
 int	mlx_exit(char *str, t_game *game)
 {
 	if (game->win)

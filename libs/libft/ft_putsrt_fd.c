@@ -1,7 +1,19 @@
-#include <unistd.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putsrt_fd.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: syanak <syanak@student.42kocaeli.com.tr >  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/15 16:31:01 by syanak            #+#    #+#             */
+/*   Updated: 2025/04/15 16:31:02 by syanak           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
+#include <unistd.h>
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	write(fd,s,ft_strlen(s));
+	write(fd, s, ft_strlen(s));
 }
