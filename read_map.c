@@ -12,7 +12,7 @@
 
 #include "so_long.h"
 #include <unistd.h>
-
+#include <stdio.h>
 char	**read_map(char *path)
 {
 	int		fd;

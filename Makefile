@@ -15,7 +15,7 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 
 # Kaynak ve nesne dosyaları
-SRC = accessibility_controls.c close_window.c exit_game.c init_map.c map_checker.c map_reachable.c read_map.c render_map.c so_long.c
+SRC = accessibility_controls.c get_next_line.c close_window.c exit_game.c init_map.c map_checker.c map_reachable.c read_map.c render_map.c so_long.c
 OBJ = $(SRC:.c=.o)
 
 # Çıktı dosyası

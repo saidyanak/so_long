@@ -92,7 +92,7 @@ void	init_map(char **av, t_game *game)
 	{
 		if (game->map)
 			free_map(game->map);
-		write(2, "Error\nInvalid Map", 17);
+		write(2, "Error\nInvalid Map\n", 18);
 		exit(1);
 	}
 }

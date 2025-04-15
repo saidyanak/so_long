@@ -13,62 +13,77 @@
 #include "libft.h"
 #include <stdlib.h>
 
-static void	freedoublepinter(char **ret)
+static char	**free_mem(char **arr)
 {
 	int	i;
 
 	i = 0;
-	while (ret[i])
-		free(ret[i++]);
-	free(ret);
+	while (arr[i] != NULL)
+	{
+		free(arr[i]);
+		i++;
+	}
+	free(arr);
+	return (NULL);
 }
 
-static	int	ft_count(char const *s, char c)
+static int	count_words(const char *str, char sep)
 {
 	int	count;
-	int	in_word;
 
 	count = 0;
-	in_word = 0;
-	while (*s)
+	while (*str != '\0')
 	{
-		if (*s == c)
-			in_word = 0;
-		else if (in_word == 0)
+		if (*str == sep)
+			str++;
+		else
 		{
-			in_word = 1;
 			count++;
+			while (*str != '\0' && *str != sep)
+				str++;
 		}
-		s++;
 	}
 	return (count);
 }
 
+static int	word_len(const char *str, char sep)
+{
+	int	len;
+
+	len = 0;
+	while (*str != '\0' && *str != sep)
+	{
+		len++;
+		str++;
+	}
+	return (len);
+}
+
 char	**ft_split(char const *s, char c)
 {
-	int		k;
-	char	**ret;
-	size_t	i;
+	char	**arr;
+	int		i;
 
-	k = 0;
-	ret = (char **)malloc(sizeof(char *) * (ft_count(s, c) + 1));
-	if (!ret)
+	i = 0;
+	if (s == NULL)
 		return (NULL);
-	while (*s)
+	arr = (char **)malloc((count_words(s, c) + 1) * sizeof(char *));
+	if (arr == NULL)
+		return (NULL);
+	while (*s != '\0')
 	{
-		i = 0;
-		while (*s && *s == c)
+		while (*s != '\0' && *s == c)
 			s++;
-		if (*s)
+		if (*s != '\0' && *s != c)
 		{
-			while (s[i] && s[i] != c)
-				i++;
-			ret[k] = ft_substr(s, 0, i);
-			if (!ret[k])
-				return (freedoublepinter(ret), NULL);
-			s += i;
-			k++;
+			arr[i] = (char *)malloc((word_len(s, c) + 1) * sizeof(char));
+			if (arr[i] == NULL)
+				return (free_mem(arr));
+			ft_strlcpy(arr[i], s, (word_len(s, c) + 1));
+			s += word_len(s, c);
+			i++;
 		}
 	}
-	return (ret[k] = NULL, ret);
+	arr[i] = NULL;
+	return (arr);
 }

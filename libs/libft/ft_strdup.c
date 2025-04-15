@@ -15,11 +15,18 @@
 
 char	*ft_strdup(const char *s1)
 {
-	char	*ret;
+	char	*ptr;
+	size_t	index;
 
-	ret = (char *)malloc((1 + ft_strlen(s1)) * sizeof(char));
-	if (!ret)
+	ptr = (char *)malloc(sizeof(*s1) * (ft_strlen(s1) + 1));
+	if (!ptr)
 		return (NULL);
-	ft_memcpy(ret, s1, ft_strlen(s1) + 1);
-	return (ret);
+	index = 0;
+	while (s1[index])
+	{
+		ptr[index] = s1[index];
+		index++;
+	}
+	ptr[index] = '\0';
+	return (ptr);
 }

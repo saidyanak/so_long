@@ -49,8 +49,7 @@ SRC = ft_atoi.c		\
 	ft_toupper.c	\
 	ft_strlcat.c	\
 	ft_striteri.c	\
-	ft_strmapi.c	\
-	get_next_line.c
+	ft_strmapi.c	
 
 BSOURCES = \
 	ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \

@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "so_long.h"
-
+#include <stdio.h>
 static int	is_retangular(char **map)
 {
 	int	i;
@@ -44,7 +44,7 @@ static int	is_wall(char **map)
 			return (0);
 		j++;
 	}
-	i = 1;
+	i = 0;
 	len = ft_strlen(map[i]);
 	while (map[i] != NULL)
 	{
@@ -104,7 +104,6 @@ static int	is_validate(char **map)
 	}
 	return (1);
 }
-
 int	map_checker(t_game *game)
 {
 	if (is_retangular(game->map) && is_wall(game->map) && is_pec(game)

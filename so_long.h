@@ -66,5 +66,6 @@ int			keyboard(int keycode, t_game *game);
 void		ft_error(char *av, t_game *game);
 void		ft_free_map(char **map);
 int			mlx_exit(char *str, t_game *game);
+char	*get_next_line(int fd);
 
 #endif
