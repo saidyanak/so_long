@@ -1,0 +1,18 @@
+[0416/171043.770190:ERROR:file_io_posix.cc(153)] open /home/syanak/.config/Code/Crashpad/pending/2079b1fe-720e-4e1e-8f5b-00a607baf61b.lock: File exists (17)
+[0416/171043.770254:ERROR:file_io_posix.cc(153)] open /home/syanak/.config/Code/Crashpad/pending/1e1309cc-cd52-4294-9442-ac0146e301e2.lock: File exists (17)
+[90m[main 2025-04-16T14:10:43.975Z][0m update#setState idle
+[782813:0416/171044.471437:ERROR:mime_util_xdg.cc(137)] Invalid mime.cache file does not contain null prior to ALIAS_LIST_OFFSET=44
+[90m[main 2025-04-16T14:11:13.978Z][0m update#setState checking for updates
+[90m[main 2025-04-16T14:11:13.992Z][0m update#setState available for download
+[782813:0416/171340.806942:ERROR:atom_cache.cc(230)] Add chromium/from-privileged to kAtomsToCache
+[0416/172043.770656:ERROR:file_io_posix.cc(153)] open /home/syanak/.config/Code/Crashpad/pending/2079b1fe-720e-4e1e-8f5b-00a607baf61b.lock: File exists (17)
+[0416/172043.770782:ERROR:file_io_posix.cc(153)] open /home/syanak/.config/Code/Crashpad/pending/2079b1fe-720e-4e1e-8f5b-00a607baf61b.lock: File exists (17)
+[0416/172043.770884:ERROR:file_io_posix.cc(153)] open /home/syanak/.config/Code/Crashpad/pending/1e1309cc-cd52-4294-9442-ac0146e301e2.lock: File exists (17)
+[0416/172043.770918:ERROR:file_io_posix.cc(153)] open /home/syanak/.config/Code/Crashpad/pending/1e1309cc-cd52-4294-9442-ac0146e301e2.lock: File exists (17)
+[0416/172043.775903:ERROR:file_io_posix.cc(153)] open /home/syanak/.config/Code/Crashpad/pending/2079b1fe-720e-4e1e-8f5b-00a607baf61b.lock: File exists (17)
+[0416/172043.775916:ERROR:file_io_posix.cc(153)] open /home/syanak/.config/Code/Crashpad/pending/1e1309cc-cd52-4294-9442-ac0146e301e2.lock: File exists (17)
+[0416/172543.770686:ERROR:file_io_posix.cc(153)] open /home/syanak/.config/Code/Crashpad/pending/2079b1fe-720e-4e1e-8f5b-00a607baf61b.lock: File exists (17)
+[0416/172543.770802:ERROR:file_io_posix.cc(153)] open /home/syanak/.config/Code/Crashpad/pending/1e1309cc-cd52-4294-9442-ac0146e301e2.lock: File exists (17)
+[0416/174043.770993:ERROR:file_io_posix.cc(153)] open /home/syanak/.config/Code/Crashpad/pending/2079b1fe-720e-4e1e-8f5b-00a607baf61b.lock: File exists (17)
+[0416/174043.771029:ERROR:file_io_posix.cc(153)] open /home/syanak/.config/Code/Crashpad/pending/1e1309cc-cd52-4294-9442-ac0146e301e2.lock: File exists (17)
+[90m[main 2025-04-16T14:45:57.753Z][0m Extension host with pid 782950 exited with code: 0, signal: unknown.

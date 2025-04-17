@@ -6,17 +6,14 @@
 /*   By: syanak <syanak@student.42kocaeli.com.tr >  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 12:07:39 by syanak            #+#    #+#             */
-/*   Updated: 2025/04/15 13:44:51 by syanak           ###   ########.fr       */
+/*   Updated: 2025/04/16 12:08:32 by syanak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINLBX_H
-# define MINLBX_H
+#ifndef SO_LONG_H
+# define SO_LONG_H
 
 # include "./libs/libft/libft.h"
-# include "./libs/minilibx-linux/mlx.h"
-# include <fcntl.h>
-# include <stdlib.h>
 
 # define PIXEL 64
 
@@ -59,7 +56,6 @@ int			map_checker(t_game *game);
 char		**read_map(char *path);
 int			put_mlx(t_game *game);
 int			close_window(t_game *game);
-void		free_map(char **map);
 void		map_reachable(t_game *game);
 void		render_map(t_game *game);
 int			keyboard(int keycode, t_game *game);

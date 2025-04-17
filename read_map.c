@@ -6,25 +6,27 @@
 /*   By: syanak <syanak@student.42kocaeli.com.tr >  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 12:07:32 by syanak            #+#    #+#             */
-/*   Updated: 2025/04/15 16:07:20 by syanak           ###   ########.fr       */
+/*   Updated: 2025/04/16 11:50:25 by syanak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-#include <stdio.h>
+#include <fcntl.h>
+#include <stdlib.h>
 #include <unistd.h>
 
-void	check_double_nl(char *line)
+void	check_double_nl(char *line, int fd)
 {
 	int	i;
 
 	i = 0;
 	while (line[i])
 	{
-		if (line[i] == '\n' && line[i + 1] == '\n')
+		if (line[i] == '\n' && (line[i + 1] == '\n' || line[1] == '\0'))
 		{
-			write(1, "Error\nMap is not rectangulaaar\n", 29);
+			write(1, "Error\nMap is not rectangular\n", 29);
 			free(line);
+			close(fd);
 			exit(1);
 		}
 		i++;
@@ -53,9 +55,7 @@ char	**read_map(char *path)
 		free(line);
 		free(holder);
 	}
-	check_double_nl(holder_map);
+	check_double_nl(holder_map, fd);
 	map = ft_split(holder_map, '\n');
-	free(holder_map);
-	close(fd);
-	return (map);
+	return (free(holder_map), close(fd), map);
 }

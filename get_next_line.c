@@ -6,12 +6,12 @@
 /*   By: syanak <syanak@student.42kocaeli.com.tr >  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 15:25:43 by syanak            #+#    #+#             */
-/*   Updated: 2025/04/15 15:25:44 by syanak           ###   ########.fr       */
+/*   Updated: 2025/04/15 17:03:11 by syanak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./libs/libft/libft.h"
 #include "so_long.h"
+#include <stdlib.h>
 #include <unistd.h>
 
 static char	*ft_read(char *str, int fd)

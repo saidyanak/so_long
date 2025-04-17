@@ -6,12 +6,11 @@
 /*   By: syanak <syanak@student.42kocaeli.com.tr >  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 12:07:27 by syanak            #+#    #+#             */
-/*   Updated: 2025/04/15 15:37:50 by syanak           ###   ########.fr       */
+/*   Updated: 2025/04/16 11:51:51 by syanak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-#include <stdio.h>
 
 static int	is_retangular(char **map)
 {

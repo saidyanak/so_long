@@ -6,12 +6,13 @@
 /*   By: syanak <syanak@student.42kocaeli.com.tr >  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 12:07:03 by syanak            #+#    #+#             */
-/*   Updated: 2025/04/15 15:34:08 by syanak           ###   ########.fr       */
+/*   Updated: 2025/04/16 17:40:19 by syanak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./libs/minilibx-linux/mlx.h"
 #include "so_long.h"
+#include <stdlib.h>
 #include <unistd.h>
 
 static int	render(t_game *game)
@@ -59,11 +60,13 @@ int	put_mlx(t_game *game)
 void	keyboard_progress(t_game *game)
 {
 	static long	mv_count = 0;
+	char		*s;
 
+	s = ft_itoa(mv_count);
+	s = ft_strjoin("\rMover: ", s);
+	write(1, s, ft_strlen(s));
 	mv_count++;
-	write(1, "Moves: ", 7);
-	write(1, ft_itoa(mv_count), ft_strlen(ft_itoa(mv_count)));
-	write(1, "\n", 1);
+	free(s);
 	if (game->map[game->y_player][game->x_player] == 'C')
 	{
 		game->n_collect--;

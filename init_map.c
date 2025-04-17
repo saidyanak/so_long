@@ -6,11 +6,13 @@
 /*   By: syanak <syanak@student.42kocaeli.com.tr >  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 12:07:21 by syanak            #+#    #+#             */
-/*   Updated: 2025/04/15 15:17:36 by syanak           ###   ########.fr       */
+/*   Updated: 2025/04/16 11:57:12 by syanak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+#include <fcntl.h>
+#include <stdlib.h>
 #include <unistd.h>
 
 void	set_defaults(t_game *game)
@@ -78,10 +80,39 @@ static void	ft_map_height(char **map, t_game *game)
 	game->map_w = i;
 }
 
+void	ft_control_null_map(char *path)
+{
+	int		fd;
+	char	*line;
+
+	fd = open(path, O_RDONLY);
+	if (fd == -1)
+	{
+		write(2, "Error\nFd open Error\n", 20);
+		exit(1);
+	}
+	line = get_next_line(fd);
+	if (!line)
+	{
+		write(2, "Error\nNULL Map\n", 15);
+		close(fd);
+		free(line);
+		exit(1);
+	}
+	free(line);
+	close(fd);
+}
+
 void	init_map(char **av, t_game *game)
 {
 	set_defaults(game);
+	ft_control_null_map(av[1]);
 	game->map = read_map(av[1]);
+	if (!game->map)
+	{
+		write(2, "Error\nInvalid Map\n", 18);
+		exit(1);
+	}
 	if (map_checker(game))
 	{
 		ft_map_height(game->map, game);
@@ -91,7 +122,7 @@ void	init_map(char **av, t_game *game)
 	else
 	{
 		if (game->map)
-			free_map(game->map);
+			ft_free_map(game->map);
 		write(2, "Error\nInvalid Map\n", 18);
 		exit(1);
 	}

@@ -6,10 +6,11 @@
 /*   By: syanak <syanak@student.42kocaeli.com.tr >  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 12:07:08 by syanak            #+#    #+#             */
-/*   Updated: 2025/04/15 12:56:50 by syanak           ###   ########.fr       */
+/*   Updated: 2025/04/16 17:34:15 by syanak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "./libs/minilibx-linux/mlx.h"
 #include "so_long.h"
 
 int	main(int ac, char **av)
@@ -24,3 +25,4 @@ int	main(int ac, char **av)
 	mlx_loop_hook(game.mlx, put_mlx, &game);
 	mlx_loop(game.mlx);
 }
+

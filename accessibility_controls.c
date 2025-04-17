@@ -6,11 +6,13 @@
 /*   By: syanak <syanak@student.42kocaeli.com.tr >  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 12:07:14 by syanak            #+#    #+#             */
-/*   Updated: 2025/04/15 15:24:51 by syanak           ###   ########.fr       */
+/*   Updated: 2025/04/16 11:58:05 by syanak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+#include <fcntl.h>
+#include <stdlib.h>
 #include <unistd.h>
 
 void	xpm_control_one(void)
@@ -56,11 +58,19 @@ void	xpm_control_two(void)
 
 void	path_checker(char *path)
 {
-	int	len;
+	int		len;
+	char	*file_name;
 
-	len = ft_strlen(path);
-	if (path[len - 1] != 'r' || path[len - 2] != 'e' || path[len - 3] != 'b'
-		|| path[len - 4] != '.')
+	if (ft_strncmp(path, "/", ft_strlen(path)) != -1)
+	{
+		file_name = ft_strrchr(path, '/');
+		file_name++;
+	}
+	else
+		file_name = path;
+	len = ft_strlen(file_name);
+	if (file_name[len - 1] != 'r' || file_name[len - 2] != 'e' || file_name[len
+			- 3] != 'b' || file_name[len - 4] != '.' || len <= 4)
 	{
 		write(1, "Wrong File Extension", 21);
 		exit(1);
@@ -87,8 +97,8 @@ void	accessibility_control(int ac, char **av)
 	{
 		xpm_control_one();
 		xpm_control_two();
-		path_checker(av[1]);
 		file_control(av[1]);
+		path_checker(av[1]);
 	}
 	else
 	{

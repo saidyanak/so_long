@@ -6,12 +6,14 @@
 /*   By: syanak <syanak@student.42kocaeli.com.tr >  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 12:35:30 by syanak            #+#    #+#             */
-/*   Updated: 2025/04/15 15:25:35 by syanak           ###   ########.fr       */
+/*   Updated: 2025/04/16 12:08:48 by syanak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+#include <stdlib.h>
 #include <unistd.h>
+#include "./libs/minilibx-linux/mlx.h"
 
 void	ft_free_map(char **map)
 {
